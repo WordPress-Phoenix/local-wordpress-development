@@ -84,3 +84,9 @@ set completion-ignore-case On
 
 Lastly save and close the file with `Ctrl+X` then `Enter` and one more `Enter`.
 
+### Enabling new terminal profile features
+
+The easiest way to enable new terminal features is to restart terminal, or open a new terminal tab. You can however, alternatively force your current terminal sessions profile to be updated with
+```
+source ~/.bash_profile
+```
