@@ -186,7 +186,19 @@ brew install bradp/vv/vv
 _Note: when you do your first VV create below, if you do it from the ~/Sites/VVV folder it will automagically setup your .vv-config file._
 ## Setting Up WordPress Development
 
-...
+Fully setting up local WordPress development of a custom site isn't that complicated, but its complex enough that we don't want to try do a comprehensive explanation in readme file. 
+
+If your intention is just to walk yourself through a "new custom local development site for WordPress". You can use the VV wizard by typing `vv create` in terminal and answering all the prompts. Occassionally your build might fail to install WordPress. If this happens use the following command to manually run the installation:
+_Note: Make sure you are in your VVV directory when executing these commands. Also, you will need to replace a portion of this command to match the site name you gave your new site during the VV wizard._
+
+```
+vagrant ssh -c 'cd /srv/www/localwp.dev/ && bash vvv-init.sh
+```
+
+We have prepared a shared a sample shell script that we use as a boilerplate when building a custom local provision thats intended to match a production website. We call these "staging provision scripts". The concept is to mirror your production site, as close as possible, for local development. That includes sample content (but real looking sample content), site options, settings, themes, plugins, etc. The shell script we prepared is *not* intended to provision your local dev site for you, instead its supposed to help you layout your own privision script that you will build and test on your own.
+
+[Sample Provision Script](assets/default_provision.sh)
+
 
 ## Connecting Sequel Pro to VVV
 
