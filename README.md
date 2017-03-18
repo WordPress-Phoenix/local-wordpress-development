@@ -16,12 +16,16 @@ Brew is a package manager. A package what? It manages tools your mac will need a
 ## Install brew packages we will use as developers
 
 ### Quickstart -> install all packages
+#### Suggested for Development
 ```
 brew tap caskroom/cask && \
 brew install grc git svn node imagemagick pkg-config hub && \
 git config --global credential.helper osxkeychain 
 brew cask install virtualbox vagrant vagrant-manager
-brew cask install alfred spectacle flux slack dash imageoptim clipmenu
-brew cask install iterm2 sequel-pro phpstorm 
-
+brew cask install iterm2 sequel-pro 
+```
+#### Recommended for productivity
+```
+brew cask install phpstorm slack
+brew cask install alfred spectacle flux dash imageoptim clipmenu
 ```
