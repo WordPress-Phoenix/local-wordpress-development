@@ -129,7 +129,51 @@ Basically, when you are using SSH or SSH tunnels, you need to "grant access" to 
 
 ## Setup dnsmasq for VVV development
 
-...
+### Configuration of dnsmasq
+This assumes you use the standard VVV with virtualbox and the default IP.
+Install: dnsmasq was installed above, if you skipped it `brew install dnsmasq`
+Setup (https://echo.co/blog/never-touch-your-local-etchosts-file-os-x-again): 
+
+```
+brew install dnsmasq
+mkdir -pv $(brew --prefix)/etc/
+echo 'address=/.dev/192.168.50.4' > $(brew --prefix)/etc/dnsmasq.conf
+sudo echo "admin enabled - quickly do sudo tasks"
+```
+
+Next type your password in the prompt before continuing.
+Now hurry a little, you only have 10 minutes to copy and paste the following commands
+```
+sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+sudo mkdir -v /etc/resolver
+sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/dev'
+```
+
+### Testing dnsmasq config
+
+Test if dnsmasq is working by typing the following and hoping for a successful response of a local IP address:
+```
+ping -c 1 -t 1 google.dev
+```
+
+Expect results like:
+```
+PING google.dev (192.168.50.4): 56 data bytes
+--- google.dev ping statistics ---
+1 packets transmitted, 0 packets received, 100.0% packet loss
+```
+
+### Understanding dnsmasq
+
+More info on dnsmasq setup and troubleshooting here:
+http://passingcuriosity.com/2013/dnsmasq-dev-osx/
+
+More info on OSX resolver
+http://apple.stackexchange.com/questions/74639/do-etc-resolver-files-work-in-mountain-lion-for-dns-resolution
+
+NOTE: nslookup ignores osx dns proxy, do not test with that
+
 
 ## Install Variable VVV Site Wizard- Called VV
 - Install via homebrew
