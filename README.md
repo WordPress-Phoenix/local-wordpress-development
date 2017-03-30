@@ -42,6 +42,8 @@ Then copy the following and past it into the terminal text editor we just used t
 ```bash
 alias ls="ls -GHf"
 alias ll='ls -lartG'
+alias xdebug_on='vagrant ssh -c "xdebug_on" | grep php'
+alias xdebug_off='vagrant ssh -c "xdebug_off" | grep php'
 alias hosts='sudo nano /private/etc/hosts'
 alias flushdns='sudo dscacheutil -flushcache'
 alias vup="vagrant up --provision"
@@ -50,15 +52,15 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias pruneknownhosts="sed -i -e s/*.*//g ~/.ssh/known_hosts"
 alias prunedevhosts="sed -i -e s/.*\.dev.*//g ~/.ssh/known_hosts"
-
-alias dke="docker exec -i -t"
-alias dkps="docker ps -a"
-alias dkls="docker images"
+alias updaterepos='ls | xargs -P10 -I{} git -C {} pull'
 
 # REST HELPER
 httpHeaders () { /usr/bin/curl -I -L $@ ; }
 
 # docker functions
+alias dke="docker exec -i -t"
+alias dkps="docker ps -a"
+alias dkls="docker images"
 dkRun () { docker run -dit $@ ; }
 dkBuild () { docker build . -t $@ ; }
 dkClean () { [[ $(docker ps -a -q -f status=exited) ]] && docker rm -v $(docker ps -a -q -f status=exited) ; }
