@@ -12,12 +12,17 @@
 ##Step 2: Getting WordPress Sniffing Rules
 
 1. cd into your VVV folder
-2. ```git clone git@github.com:WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs```
-3. ```phpcs --config-set installed_paths YOURPATHHERE```
+2. 
+```
+git clone git@github.com:WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs
+```
+3. ```phpcs --config-set installed_paths $(pwd)/wpcs/```
 
 ## Step 3: Integration with IntelliJ IDEA or PhpStorm###
-
-1. Navigate to Preferences > PHP > Code Sniffer
-2. Paste your clipboard into the path and hit 'validate', then apply.
-3. Navigate to Preferences > Inspections > PHP > PHP Code Sniffer validation and tick checkbox to enable
-4. Refresh 'Coding Standards' dropdown and select your preferred options
+[Screenshot Goes Here]()
+1. Type `sniff` into the search field on the top left
+2. Click `Code Sniffer`, and click the tripple dots to open up prefs.
+2. Paste your clipboard (from which phpcs command) into the path and hit 'validate', then click apply.
+3. Click on inspections and tick checkbox next to PHP Code Sniffer Validation
+4. Click the blue arrows to Refresh 'Coding Standards' dropdown and select your preferred options (Like WordPress-Core)
+5. Apply and OK.
