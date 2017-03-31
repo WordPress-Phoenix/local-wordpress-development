@@ -1,15 +1,15 @@
 # Install and Setup Code Sniffer with PHPStorm
 
-##Prerequisites##
+## Prerequisites
 
 - Homebrew is installed
 
-##Step 1: Installing PHP Code Sniffer##
+## Step 1: Installing PHP Code Sniffer
 
 1. `brew install php-code-sniffer`
 2. `which phpcs` and copy result into clipboard.
 
-##Step 2: Getting WordPress Sniffing Rules
+## Step 2: Getting WordPress Sniffing Rules
 
 1. cd into your VVV folder
 2. 
