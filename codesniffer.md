@@ -12,7 +12,7 @@
 ## Step 2: Getting WordPress Sniffing Rules
 
 1. cd into your VVV folder
-2. 
+2. Copy and paste the following into terminal:
 ```
 git clone git@github.com:WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs
 ```
