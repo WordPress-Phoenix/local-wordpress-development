@@ -30,7 +30,11 @@ brew cask install phpstorm slack
 brew cask install alfred spectacle flux dash imageoptim clipmenu
 brew cask install filezilla google-chrome parallels-desktop spotify snagit
 ```
-
+#### Quicklook Productivity Brews
+```
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+```
+Originally from https://github.com/sindresorhus/quick-look-plugins
 ## Setup Bash Profile and Features
 Setting up your terminal profile is very important for productivity. We recommend the following enhancements. Being by opening your bash profile configuration file. 
 
