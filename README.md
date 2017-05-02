@@ -56,7 +56,11 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias pruneknownhosts="sed -i -e s/*.*//g ~/.ssh/known_hosts"
 alias prunedevhosts="sed -i -e s/.*\.dev.*//g ~/.ssh/known_hosts"
+
+# LOCAL GIT HELPERS
 alias updaterepos='ls | xargs -P10 -I{} git -C {} pull'
+alias prunerepos='ls | xargs -P10 -I{} git -C {} remote prune origin'
+alias checkoutdevelopall='ls | xargs -P10 -I{} git -C {} checkout develop'
 
 # REST HELPER
 httpHeaders () { /usr/bin/curl -I -L $@ ; }
