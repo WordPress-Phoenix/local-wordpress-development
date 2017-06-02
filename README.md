@@ -202,7 +202,7 @@ If your intention is just to walk yourself through a "new custom local developme
 _Note: Make sure you are in your VVV directory when executing these commands. Also, you will need to replace a portion of this command to match the site name you gave your new site during the VV wizard._
 
 ```
-vagrant ssh -c 'cd /srv/www/localwp.dev/ && bash vvv-init.sh
+vagrant ssh -c 'cd /srv/www/localwp.dev/ && bash vvv-init.sh'
 ```
 
 We have prepared a shared a sample shell script that we use as a boilerplate when building a custom local provision thats intended to match a production website. We call these "staging provision scripts". The concept is to mirror your production site, as close as possible, for local development. That includes sample content (but real looking sample content), site options, settings, themes, plugins, etc. The shell script we prepared is *not* intended to provision your local dev site for you, instead its supposed to help you layout your own privision script that you will build and test on your own.
