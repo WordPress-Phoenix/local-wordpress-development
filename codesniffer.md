@@ -11,8 +11,8 @@
 cd ~/Sites/VVV/ && composer require wp-coding-standards/wpcs:^0.10 && composer install && $(pwd)/vendor/bin/phpcs --config-set installed_paths $(pwd)/vendor/wp-coding-standards/wpcs/ && $(pwd)/vendor/bin/phpcs -i && which $(pwd)/vendor/bin/phpcs ;
 ```
 
-## Step 3: Integration with IntelliJ IDEA or PhpStorm###
-[Screenshot Goes Here]()
+## Step 2: Integration with IntelliJ IDEA or PhpStorm###
+[Screenshot Gif Coming Soon]()
 1. Type `sniff` into the search field on the top left
 2. Click `Code Sniffer`, and click the triple dots to open up prefs.
 3. If Local is not an option on the left pane, delete all left pane values, click apply, then close and reopen the prefs.
