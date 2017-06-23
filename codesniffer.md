@@ -2,12 +2,15 @@
 
 ## Prerequisites
 
-- Homebrew is installed
+- Composer
+- VVV at `~/Sites/VVV/`
 
 ## Step 1: Installing PHP Code Sniffer
 
-1. `brew install php-code-sniffer`
-2. `which phpcs` and copy result into clipboard.
+```
+cd ~/Sites/VVV/ && composer require wp-coding-standards/wpcs:^0.10 && composer install && ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs/ && ./vendor/bin/phpcs -i && which $(pwd)/vendor/bin/phpcs ;
+```
+
 
 ## Step 2: Getting WordPress Sniffing Rules
 
