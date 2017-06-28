@@ -114,6 +114,14 @@ If you do not already have a ssh key pair, you need to generate at least one pai
 
 In the case of SSH key pairs, you keep the private key to yourself, never share this with anyone else. You share your public key with, well anyone who needs to grant you access to there servers. When they add your public key (deadbolt) to their servers, it’s like giving you your own backdoor into the servers that only your private key works with. (Ever seen the keymaker in the Matrix movie? Kind of like that).
 
+### Importing existing SSH key pair
+
+If you are moving existing keys from a previous computer, you'll need to import the keys instead of generating new ones.
+
+1. Copy the existing keys into the new computer's `~/.ssh` folder.
+2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+3. It should also be noted that the .ssh folder itself should only be writeable by you (permissions for that would be 700) 
+
 ## Configure your ssh forwarding agent
 
 https://developer.github.com/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding
