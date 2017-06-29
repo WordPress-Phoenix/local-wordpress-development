@@ -119,8 +119,8 @@ In the case of SSH key pairs, you keep the private key to yourself, never share 
 If you are moving existing keys from a previous computer, you'll need to import the keys instead of generating new ones.
 
 1. Copy the existing keys into the new computer's `~/.ssh` folder.
-2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
-3. It should also be noted that the .ssh folder itself should only be writeable by you (permissions for that would be 700) 
+2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. It should also be noted that the .ssh folder itself should only be writeable by you (permissions for that would be 700).
+3. Run `ssh-add -k ~/.ssh/id_rsa`.
 
 ## Configure your ssh forwarding agent
 
