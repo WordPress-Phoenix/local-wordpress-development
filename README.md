@@ -6,12 +6,14 @@ This guide is for OS X, and while some tools are cross-platform or concepts may 
 
 ### How-To Setup...
 
-* 1) Package Dependencies and OS X Apps via CLI
-* 2) Terminal
-* 3) SSH
-* 4) Local DNS
-* 3) Virtual Environments
-* 4) Other/Misc
+| How-To Setup... | 
+| -------------   |
+| :package: Dependencies and Apps |
+| :computer: Terminal      | 
+| :satellite: SSH |
+| :ledger: Local DNS |
+| :rocket: Virtual Environments |
+| :grey_question: Other / Misc. |
 
 
 # Setup Package Dependencies and OS X Apps via CLI
