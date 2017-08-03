@@ -16,7 +16,7 @@ This guide is for OS X, and while some tools are cross-platform or concepts may 
 | :grey_question: Other / Misc. |
 
 
-# Setup Package Dependencies and OS X Apps via CLI
+# Setup Dependencies and Apps
 
 ### Quickstart
 
