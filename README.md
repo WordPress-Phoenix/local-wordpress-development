@@ -1,46 +1,61 @@
-# Getting Started developing locally
+# Getting Started
 
-A Mac users guide to getting started with developing WordPress sites locally on your computer. Unfortunately this guide is aimed to mac users, and many of the concepts will not transalte to PC's just because the operating systems do not support the same features. Some parts and concepts will work cross platform.
+The right tools make the difference with most craft, and as a web developer your local environment is a critical foundation to set yourself up for success.
 
-## Using Homebrew `brew` to manage OS pacakges
+This guide is for OS X, and while some tools are cross-platform or concepts may translate, your mileage will vary.
 
-### Quickstart -> install
+### How-To Setup...
+
+* 1) Package Dependencies and OS X Apps via CLI
+* 2) Terminal
+* 3) SSH
+* 4) Local DNS
+* 3) Virtual Environments
+* 4) Other/Misc
+
+
+# Setup Package Dependencies and OS X Apps via CLI
+
+### Quickstart
+
+###### Download and Install Homebrew Package Manager
+
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### Why brew?
+#### Why Brew?
 
-Brew is a package manager. A package what? It manages tools your mac will need at its core, the most common package for developers is GIT. Instead of following long guides of typing CLI commands and configuring files in directories you can never remebmer, you can now have these tools "automatically" threw brew. Brew is considerably different today, then it was several years ago. Throw out your previous notions of brew and just give it a try.
+Brew helps developers manages software and tools be time-consuming and challenging to install and configure. Brew, in conjunction with Cask, can be a near-one-stop shop for installing _any_ software.
 
-## Install brew packages we will use as developers
+It's rad.
 
-### Quickstart -> install all packages
-#### Suggested for Development
+### Recommended Developer Packages
 ```bash
 brew tap caskroom/cask && \
 brew install grc git svn node imagemagick pkg-config hub && \
-git config --global credential.helper osxkeychain 
+git config --global credential.helper osxkeychain
 brew cask install virtualbox vagrant vagrant-manager
-brew cask install iterm2 sequel-pro 
+brew cask install iterm2 sequel-pro
 ```
-#### Recommended for productivity
-```
+### Recommended for Productivity
+```bash
 brew cask install phpstorm slack
 brew cask install alfred spectacle flux dash imageoptim clipmenu
 brew cask install filezilla google-chrome parallels-desktop spotify snagit
 ```
-#### Quicklook Productivity Brews
+### Recommended for OS X Finder Quick Look Previews
 ```
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 ```
 Originally from https://github.com/sindresorhus/quick-look-plugins
-## Setup Bash Profile and Features
-Setting up your terminal profile is very important for productivity. We recommend the following enhancements. Being by opening your bash profile configuration file. 
 
-### Using terminal to setup .bash_profile
+# Setup Terminal
+Setting up your terminal profile is very important for productivity. We recommend the following enhancements. Being by opening your bash profile configuration file.
+
+### Setup `.bash_profile`
 ```bash
-nano ~/.bash_profile
+sudo nano ~/.bash_profile
 ```
 Then copy the following and past it into the terminal text editor we just used to open the file.
 ```bash
@@ -77,7 +92,7 @@ dkCleanImages () { docker rmi $(docker images | grep "^<none>" | awk '{print $3}
 
 Lastly save and close the file with `Ctrl+X` then `Enter` and one more `Enter`.
 
-### Using terminal to setup .inputrc
+### Setup `.inputrc`
 Input RC controls what happens as you type in terminal. We are going to setup a feature that allows terminal to use "per command history". When in terminal you can hit the up and down arrows to cycle through previously used commands. With this extra configuration file, it will allow you to track "per command" history. So if you typed "git push" then "cd www", you may want to only search your history for "git" commands. To do so, simply type "git" and then press up, it will only search your history for git commands and find "git push" as desired.
 
 Open the .inputrc file from terminals nano editor:
@@ -94,46 +109,61 @@ set completion-ignore-case On
 
 Lastly save and close the file with `Ctrl+X` then `Enter` and one more `Enter`.
 
-### Enabling new terminal profile features
+### Applying New Settings To Terminal
 
-The easiest way to enable new terminal features is to restart terminal, or open a new terminal tab. You can however, alternatively force your current terminal sessions profile to be updated with
+Updates to the `.bash_profile` don't immediately reflect in your current editor. Open a new tab, restart terminal or source your profile for the current session.
 ```
 source ~/.bash_profile
 ```
 
-## Setup your SSH key pair
+# Setup SSH
 
-Only needed if you haven't already generated an SSH private key (id_rsa) and public key pair (id_rsa.pub) before.
+Secure Shell is an encrypted protocol used to connect between two networked computers (on a local network or via the internet). Many web hosts and services like GitHub allow you to authenticate using SSH keys from a trusted machine.
 
-### Generate an ssh key pair
+SSH keys only need to be generated once. Instructions are below to copy existing keys or import keys from another computer.
+
+### Check for Current Key(s)
+```bash
+ls -al ~/.ssh
+```
+
+### Copy Current Public Key
+```bash
+pbcopy < ~/.ssh/id_rsa.pub
+```
+
+### Generate New Keys
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
-### Understanding SSH key pairs
+### Moving Keys to Another Computer
 
-If you do not already have a ssh key pair, you need to generate at least one pair. Key pairs are like deadbolts & keys. Your “private key” is like your house key, it only works when used with your houses deadbolt lock. The “public key” is like the deadbolt lock on your house. The pair, the key and the deadbolt, together allows you secure access into your home. 
-
-In the case of SSH key pairs, you keep the private key to yourself, never share this with anyone else. You share your public key with, well anyone who needs to grant you access to there servers. When they add your public key (deadbolt) to their servers, it’s like giving you your own backdoor into the servers that only your private key works with. (Ever seen the keymaker in the Matrix movie? Kind of like that).
-
-### Importing existing SSH key pair
-
-If you are moving existing keys from a previous computer, you'll need to import the keys instead of generating new ones.
+If you are moving existing keys from a previous computer, you may want to import the keys instead of generating new ones.
 
 1. Copy the existing keys into the new computer's `~/.ssh` folder.
-2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. It should also be noted that the .ssh folder itself should only be writeable by you (permissions for that would be 700).
+2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. It should also be noted that the .ssh folder itself should only be writeable by you (`chmod 700 ~/.ssh`).
 3. Run `ssh-add -k ~/.ssh/id_rsa`.
 
-## Configure your ssh forwarding agent
+
+### Understanding SSH Key Pairs
+
+SSH keys are generated at user prompt -- they don't come installed on computers.
+
+Key pairs are like deadbolts & keys. Your **private key** is akin to _your_ house key, it only works with _your_ house's deadbolt lock. While the **public key** is more like the deadbolt lock on your house. The pair, the key and the deadbolt, together allows you secure access into your home.
+
+In the case of SSH key pairs, you keep the private key to yourself, never share this with anyone else. You share your public key with, well anyone who needs to grant you access to there servers. When they add your public key (deadbolt) to their servers, it’s like giving you your own backdoor into the servers that only your private key works with. (Seen the key-maker in the Matrix movie? Kind of like that).
+
+### Configure SSH Forwarding Agent
 
 https://developer.github.com/guides/using-ssh-agent-forwarding/#setting-up-ssh-agent-forwarding
 
 ### Example for connecting to Pagely Hosting
 Open terminal editor nano for .ssh config file:
-```
+```bash
 nano ~/.ssh/config
 ```
 
 Then copy and paste the following into the editor.
-```
+```bash
 Host *.pagelydev.com
      ForwardAgent yes
 Host *.pagelyhosting.com
@@ -145,44 +175,44 @@ Lastly save and close the file with `Ctrl+X` then `Enter` and one more `Enter`.
 
 Basically, when you are using SSH or SSH tunnels, you need to "grant access" to your private key. This allows us to pass our SSH key to the remote server we are connecting to, and it can now use your key to "forward" your requests to additional servers that it may talk to. You don't want to allow this for "just every server you connect to". That would be dangerous since you need to trust the connecting server not to abuse the use or sharing of your private key. Remember your private key, the one without .pub at the end, is like a password. Do not share your private key with anyone, and we highly recommend you do not "sync it to a cloud drive service". Certainly never store it in a Github repository, regardless of the repo is private or public.
 
-## Setup dnsmasq for VVV development
+# Setup Local DNS
 
-### Configuration of dnsmasq
-This assumes you use the standard VVV with virtualbox and the default IP.
+### Configure `dnsmasq`
+This assumes you use the standard VVV with VirtualBox and the default IP.
 Install: dnsmasq was installed above, if you skipped it `brew install dnsmasq`
-Setup (https://echo.co/blog/never-touch-your-local-etchosts-file-os-x-again): 
+Setup (https://echo.co/blog/never-touch-your-local-etchosts-file-os-x-again):
 
-```
-brew install dnsmasq
+```bash
 mkdir -pv $(brew --prefix)/etc/
 echo 'address=/.dev/192.168.50.4' > $(brew --prefix)/etc/dnsmasq.conf
 sudo echo "admin enabled - quickly do sudo tasks"
 ```
 
 Next type your password in the prompt before continuing.
+
 Now hurry a little, you only have 10 minutes to copy and paste the following commands
-```
+```bash
 sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 sudo mkdir -v /etc/resolver
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/dev'
 ```
 
-### Testing dnsmasq config
+##### Test `dnsmasq` is working
 
-Test if dnsmasq is working by typing the following and hoping for a successful response of a local IP address:
+Send a ping to `google.dev` and you should see a local IP address in place of a std. Google IP
 ```
 ping -c 1 -t 1 google.dev
 ```
 
 Expect results like:
-```
+```bash
 PING google.dev (192.168.50.4): 56 data bytes
 --- google.dev ping statistics ---
 1 packets transmitted, 0 packets received, 100.0% packet loss
 ```
 
-### Understanding dnsmasq
+#### Understanding `dnsmasq`
 
 More info on dnsmasq setup and troubleshooting here:
 http://passingcuriosity.com/2013/dnsmasq-dev-osx/
@@ -193,9 +223,10 @@ http://apple.stackexchange.com/questions/74639/do-etc-resolver-files-work-in-mou
 NOTE: nslookup ignores osx dns proxy, do not test with that
 
 
-## Install Variable VVV Site Wizard- Called VV
+# Install Virtual Environments
+
 - Install via homebrew
-- create config file for location reference 
+- create config file for location reference
 - pull the blueprint from repo
 - -maybe pull vv hooked companion files
 ```
@@ -204,9 +235,9 @@ brew install bradp/vv/vv
 _Note: when you do your first VV create below, if you do it from the ~/Sites/VVV folder it will automagically setup your .vv-config file._
 ## Setting Up WordPress Development
 
-Fully setting up local WordPress development of a custom site isn't that complicated, but its complex enough that we don't want to try do a comprehensive explanation in readme file. 
+Fully setting up local WordPress development of a custom site isn't that complicated, but its complex enough that we don't want to try do a comprehensive explanation in readme file.
 
-If your intention is just to walk yourself through a "new custom local development site for WordPress". You can use the VV wizard by typing `vv create` in terminal and answering all the prompts. Occassionally your build might fail to install WordPress. If this happens use the following command to manually run the installation:
+If your intention is just to walk yourself through a "new custom local development site for WordPress". You can use the VV wizard by typing `vv create` in terminal and answering all the prompts. Occasionally your build might fail to install WordPress. If this happens use the following command to manually run the installation:
 _Note: Make sure you are in your VVV directory when executing these commands. Also, you will need to replace a portion of this command to match the site name you gave your new site during the VV wizard._
 
 ```
@@ -236,7 +267,7 @@ SSH Port: 	(none)
 Unchecked SSL box
 ```
 
-## A few manual things to install/setup
+# Install Other/Misc Config
 - Plugins for PHPStorm: dash, gfm, .ignore
 - PHPStorm->prefs->editor->code style->php->”Set From…”->Wordpress
 - `git config --global user.name "John Doe"`
