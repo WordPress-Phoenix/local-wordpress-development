@@ -8,12 +8,12 @@ This guide is for OS X, and while some tools are cross-platform or concepts may 
 
 | How-To Setup... | 
 | -------------   |
-| :package: Dependencies and Apps |
-| :computer: Terminal      | 
-| :satellite: SSH |
-| :ledger: Local DNS |
-| :rocket: Virtual Environments |
-| :grey_question: Other / Misc. |
+| :package: [Dependencies and Apps](#setup-dependencies-and-apps) |
+| :computer: [Terminal](#setup-terminal) | 
+| :satellite: [SSH](#setup-ssh) |
+| :ledger: [Local DNS](#setup-local-dns) |
+| :rocket: [Virtual Environments](#setup-virtual-environments) |
+| :grey_question: [Other / Misc.](#setup-other-misc) |
 
 
 # Setup Dependencies and Apps
@@ -225,7 +225,7 @@ http://apple.stackexchange.com/questions/74639/do-etc-resolver-files-work-in-mou
 NOTE: nslookup ignores osx dns proxy, do not test with that
 
 
-# Install Virtual Environments
+# Setup Virtual Environments
 
 - Install via homebrew
 - create config file for location reference
@@ -269,7 +269,7 @@ SSH Port: 	(none)
 Unchecked SSL box
 ```
 
-# Install Other/Misc Config
+# Setup Other/Misc Config
 - Plugins for PHPStorm: dash, gfm, .ignore
 - PHPStorm->prefs->editor->code style->php->”Set From…”->Wordpress
 - `git config --global user.name "John Doe"`
