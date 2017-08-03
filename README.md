@@ -6,14 +6,12 @@ This guide is for OS X, and while some tools are cross-platform or concepts may 
 
 ### How-To Setup...
 
-| How-To Setup... | 
-| -------------   |
-| :package: [Dependencies and Apps](#setup-dependencies-and-apps) |
-| :computer: [Terminal](#setup-terminal) | 
-| :satellite: [SSH](#setup-ssh) |
-| :ledger: [Local DNS](#setup-local-dns) |
-| :rocket: [Virtual Environments](#setup-virtual-environments) |
-| :grey_question: [Other / Misc.](#setup-other-misc) |
+| How-To Setup... | - | - | 
+| -------------   | - | - |
+| :package: [**Dependencies and Apps**](#setup-dependencies-and-apps) | :computer: [**Terminal**](#setup-terminal) | :satellite: [**SSH**](#setup-ssh) |
+| :ledger: [**Local DNS**](#setup-local-dns) | :rocket: [**Virtual Environments**](#setup-virtual-environments) | :grey_question: [**Other / Misc.**](#setup-other-misc) |
+
+
 
 
 # Setup Dependencies and Apps
