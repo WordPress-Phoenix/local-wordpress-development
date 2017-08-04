@@ -6,7 +6,7 @@ This guide is for OS X, and while some tools are cross-platform or concepts may 
 
 ### How-To Setup...
 
-| How-To Setup... | - | - | 
+| How-To Setup... | - | - |
 | -------------   | - | - |
 | :package: [**Dependencies and Apps**](#setup-dependencies-and-apps) | :computer: [**Terminal**](#setup-terminal) | :satellite: [**SSH**](#setup-ssh) |
 | :ledger: [**Local DNS**](#setup-local-dns) | :rocket: [**Virtual Environments**](#setup-virtual-environments) | :grey_question: [**Other / Misc.**](#setup-other-misc) |
@@ -222,6 +222,26 @@ http://apple.stackexchange.com/questions/74639/do-etc-resolver-files-work-in-mou
 
 NOTE: nslookup ignores osx dns proxy, do not test with that
 
+#### Optional: Resolve domains using alternative DNS if your ISP's lags
+
+DNS resolves domain names and using your ISP's DNS is kind of like using your ISP's email.
+
+Even business or fiber internet can lean on mediocre DNS, so if you frequently have problems, try a change.
+
+1. Open __System Preferences__ and select __Network__ _[third row]_.
+2. Click __Advanced...__ in the bottom-right.
+3. Click DNS _[third tab]_
+4. Add IPs in left column.
+
+```
+Google DNS:
+8.8.8.8
+8.8.4.4
+
+OpenDNS:
+208.67.222.222
+208.67.222.220
+```
 
 # Setup Virtual Environments
 
