@@ -17,6 +17,7 @@ wp post list --field=ID --cat=3578 --url=winteriscoming.net | xargs -n1 -I {} sh
 
 ```bash
 wp search-replace 'linked_brand' 'linked_site' wp_*_termmeta
+```
 
 #### TIPS
 * `--format` is a powerful modifier that changes default `table`
