@@ -36,11 +36,11 @@ brew tap caskroom/cask && \
 brew install grc git svn node imagemagick pkg-config hub && \
 git config --global credential.helper osxkeychain
 brew cask install virtualbox vagrant vagrant-manager
-brew cask install iterm2 sequel-pro postman
+brew cask install iterm2 sequel-pro postman gitkraken visual-studio-code
 ```
 ### Recommended for Productivity
 ```bash
-brew cask install phpstorm slack 
+brew cask install phpstorm slack lastpass
 brew cask install alfred spectacle flux dash imageoptim clipmenu
 brew cask install filezilla google-chrome parallels-desktop spotify snagit
 ```
