@@ -243,19 +243,14 @@ OpenDNS:
 208.67.222.220
 ```
 
-# Setup Virtual Environments
-
-- Install via homebrew
-- create config file for location reference
-- pull the blueprint from repo
-- -maybe pull vv hooked companion files
-```
-brew install bradp/vv/vv
-```
-_Note: when you do your first VV create below, if you do it from the ~/Sites/VVV folder it will automagically setup your .vv-config file._
 ## Setting Up WordPress Development
 
 Fully setting up local WordPress development of a custom site isn't that complicated, but its complex enough that we don't want to try do a comprehensive explanation in readme file.
+
+Quick setup of VVV:
+```
+mkdir -p ~/Sites; cd ~/Sites && git clone https://github.com/Varying-Vagrant-Vagrants/VVV.git ; cd VVV && vagrant up ; cp VVV/vvv-config.yml VVV/vvv-custom.yml
+```
 
 If your intention is just to walk yourself through a "new custom local development site for WordPress". You can use the VV wizard by typing `vv create` in terminal and answering all the prompts. Occasionally your build might fail to install WordPress. If this happens use the following command to manually run the installation:
 _Note: Make sure you are in your VVV directory when executing these commands. Also, you will need to replace a portion of this command to match the site name you gave your new site during the VV wizard._
