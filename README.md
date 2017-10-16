@@ -41,7 +41,7 @@ brew cask install iterm2 sequel-pro postman gitkraken visual-studio-code
 ### Recommended for Productivity
 ```bash
 brew cask install phpstorm slack lastpass
-brew cask install alfred spectacle flux dash imageoptim clipmenu
+brew cask install alfred spectacle flux dash imageoptim clipy
 brew cask install filezilla google-chrome parallels-desktop spotify snagit
 ```
 ### Recommended for OS X Finder Quick Look Previews
