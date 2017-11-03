@@ -247,6 +247,12 @@ OpenDNS:
 
 Fully setting up local WordPress development of a custom site isn't that complicated, but its complex enough that we don't want to try do a comprehensive explanation in readme file.
 
+VVV Pre Reqs:
+```
+vagrant plugin install vagrant-hostsupdater
+vagrant plugin install vagrant-triggers
+```
+
 Quick setup of VVV:
 ```
 mkdir -p ~/Sites; cd ~/Sites && git clone https://github.com/Varying-Vagrant-Vagrants/VVV.git ; cd VVV && vagrant up ; cp VVV/vvv-config.yml VVV/vvv-custom.yml
