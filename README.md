@@ -33,10 +33,10 @@ It's rad.
 ### Recommended Developer Packages
 ```bash
 brew tap caskroom/cask && \
-brew install grc git svn node imagemagick pkg-config hub && \
+brew install grc git svn node imagemagick pkg-config hub dnsmasq && \
 git config --global credential.helper osxkeychain
 brew cask install virtualbox vagrant vagrant-manager
-brew cask install iterm2 sequel-pro postman dnsmasq visual-studio-code
+brew cask install iterm2 sequel-pro postman visual-studio-code
 ```
 ### Recommended for Productivity
 ```bash
