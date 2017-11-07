@@ -42,7 +42,7 @@ brew cask install iterm2 sequel-pro postman visual-studio-code
 ```bash
 brew cask install phpstorm slack lastpass
 brew cask install alfred spectacle flux dash imageoptim clipy
-brew cask install filezilla google-chrome parallels-desktop spotify snagit
+brew cask install filezilla google-chrome spotify snagit
 ```
 ### Recommended for OS X Finder Quick Look Previews
 ```
