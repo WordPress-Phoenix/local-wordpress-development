@@ -259,7 +259,9 @@ mkdir -p ~/Sites; cd ~/Sites && git clone https://github.com/Varying-Vagrant-Vag
 ```
 
 ### But I want a custom local WordPress instance
-Enter VVV2 YML configs. Allowing you to tell VVV that you want more local instances, and how you want those instances configured. Read more in the [official VVV2 config docs](https://varyingvagrantvagrants.org/docs/en-US/vvv-config/). 
+Enter VVV2 YML configs. Allowing you to tell VVV that you want more local instances, and how you want those instances configured. Read more in the [official VVV2 config docs](https://varyingvagrantvagrants.org/docs/en-US/vvv-config/). Would you like to see a video to follow along? We got you covered there too!
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/6XC1er-2pmM/0.jpg)](https://www.youtube.com/watch?v=6XC1er-2pmM "Video Title")
 
 First we need to create a custom config file that VVV2 is expecting:
 
