@@ -206,7 +206,7 @@ ping -c 1 -t 1 google.dev
 ```
 
 Expect results like:
-```bash
+```text
 PING google.dev (192.168.50.4): 56 data bytes
 --- google.dev ping statistics ---
 1 packets transmitted, 0 packets received, 100.0% packet loss
