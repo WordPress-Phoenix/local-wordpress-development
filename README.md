@@ -303,7 +303,7 @@ https://github.com/WordPress-Phoenix/vvv2-provision-boilerplate
 MySQL Host: 127.0.0.1
 User: 		wp
 Pass: 		wp
-Database: 	vvv.dev
+Database: 	(empty)
 Port: 		3306
 SSH Host: 	vvv.dev
 SSH User: 	vagrant
