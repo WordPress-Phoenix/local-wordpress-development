@@ -20,3 +20,12 @@ cd ~/Sites/VVV/ && composer require wp-coding-standards/wpcs:^0.10 && composer i
 5. Click on inspections and tick checkbox next to PHP Code Sniffer Validation
 4. Click the blue arrows to Refresh 'Coding Standards' dropdown and select your preferred options (Like WordPress-Core)
 5. Apply and OK.
+
+## Note about coming change:
+
+We learned phpcs is part of VVV natively:
+```
+VVV/www/default/database-admin/vendor/squizlabs/php_codesniffer/scripts/phpcs
+```
+
+We have a todo here to fix up these instructions to connect this phpcs file to the wordpress rulesets.
