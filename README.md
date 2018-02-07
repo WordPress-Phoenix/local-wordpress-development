@@ -195,20 +195,20 @@ Now hurry a little, you only have 10 minutes to copy and paste the following com
 sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 sudo mkdir -v /etc/resolver
-sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/dev'
+sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/test'
 ```
 
 ##### Test `dnsmasq` is working
 
-Send a ping to `google.dev` and you should see a local IP address in place of a std. Google IP
+Send a ping to `google.test` and you should see a local IP address in place of a std. Google IP
 ```
-ping -c 1 -t 1 google.dev
+ping -c 1 -t 1 google.test
 ```
 
 Expect results like:
 ```text
-PING google.dev (192.168.50.4): 56 data bytes
---- google.dev ping statistics ---
+PING google.test (192.168.50.4): 56 data bytes
+--- google.test ping statistics ---
 1 packets transmitted, 0 packets received, 100.0% packet loss
 ```
 
