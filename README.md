@@ -266,7 +266,7 @@ Enter VVV2 YML configs. Allowing you to tell VVV that you want more local instan
 First we need to create a custom config file that VVV2 is expecting:
 
 ```bash
-cp VVV/vvv-config.yml VVV/vvv-custom.yml
+cp ~/Sites/VVV/vvv-config.yml ~/Sites/VVV/vvv-custom.yml
 ```
 
 Next we need to add a custom domain to the configuration file. 
