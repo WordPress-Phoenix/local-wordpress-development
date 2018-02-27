@@ -24,6 +24,11 @@ wp post list --field=ID --cat=3578 --url=winteriscoming.net | xargs -n1 -I {} sh
 ```bash
 wp search-replace 'linked_brand' 'linked_site' wp_*_termmeta
 ```
+### Add user to all sites in multisite 
+REMEMBER: to change the USERID to the ID of the user you want to add. And change the role if you don't want this user to be an administrator. 
 
+```bash
+for url in $(wp site list --format=csv --fields=url | tail -n +2); do   echo "$url:";   wp user set-role USERID administrator; done
+```
 #### TIPS
 * `--format` is a powerful modifier that changes default `table`
