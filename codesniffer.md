@@ -1,5 +1,9 @@
 # Install and Setup Code Sniffer with PHPStorm
 
+Prefer video insutrctions? We have got you covered.
+
+[![VIDEO INSTRUCTIONS](https://img.youtube.com/vi/8kpAyi6U-8w/0.jpg)](https://www.youtube.com/watch?v=8kpAyi6U-8w)
+
 ## Prerequisites
 
 - Composer
@@ -12,7 +16,7 @@ cd ~/Sites/VVV/ && composer require wp-coding-standards/wpcs:^0.10 && composer i
 ```
 
 ## Step 2: Integration with IntelliJ IDEA or PhpStorm###
-[Screenshot Gif Coming Soon]()
+
 1. Type `sniff` into the search field on the top left
 2. Click `Code Sniffer`, and click the triple dots to open up prefs.
 3. If Local is not an option on the left pane, delete all left pane values, click apply, then close and reopen the prefs.
@@ -20,12 +24,3 @@ cd ~/Sites/VVV/ && composer require wp-coding-standards/wpcs:^0.10 && composer i
 5. Click on inspections and tick checkbox next to PHP Code Sniffer Validation
 4. Click the blue arrows to Refresh 'Coding Standards' dropdown and select your preferred options (Like WordPress-Core)
 5. Apply and OK.
-
-## Note about coming change:
-
-We learned phpcs is part of VVV natively:
-```
-VVV/www/default/database-admin/vendor/squizlabs/php_codesniffer/scripts/phpcs
-```
-
-We have a todo here to fix up these instructions to connect this phpcs file to the wordpress rulesets.
