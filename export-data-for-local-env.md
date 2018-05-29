@@ -2,9 +2,7 @@
 
 THIS IS A WORK IN PROGRESS.
 
-This is a sample of how I (Seth Carstens) implimented the sample data set for local development of fansided.dev, which now comes pre-packaged into the local provision script. The below should be used as a reference to setup sample data of another site, or to update the sample data on fansided.dev. There is an example exports zip file that shows what to expect as results for each step.
-
-[localdev-fansided-site-example-exports](assets/dev-assets/setup-files/localdev-fansided-site-example-exports.zip)
+This is a sample of how I (Seth Carstens) implimented the sample data set for local development of fansided.dev, which now comes pre-packaged into the local provision script. The below should be used as a reference to setup sample data of another site, or to update the sample data.
 
 #### STEP 0: Trancate and Admin User
 - Truncate all data in all tables (do not delete the tables)
