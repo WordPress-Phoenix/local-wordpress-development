@@ -184,7 +184,7 @@ Setup (https://echo.co/blog/never-touch-your-local-etchosts-file-os-x-again):
 
 ```bash
 mkdir -pv $(brew --prefix)/etc/
-echo 'address=/.dev/192.168.50.4' > $(brew --prefix)/etc/dnsmasq.conf
+echo 'address=/.test/192.168.50.4' > $(brew --prefix)/etc/dnsmasq.conf
 sudo echo "admin enabled - quickly do sudo tasks"
 ```
 
