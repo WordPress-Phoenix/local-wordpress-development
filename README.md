@@ -143,6 +143,38 @@ If you are moving existing keys from a previous computer, you may want to import
 2. After copying the keys over, the file permissions will be too open and in some cases won't be accepted when trying to connect to servers. To set the correct permissions, run `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. It should also be noted that the .ssh folder itself should only be writeable by you (`chmod 700 ~/.ssh`).
 3. Run `ssh-add -k ~/.ssh/id_rsa`.
 
+### Adding Keys to New Computer
+
+First we should check if there is already some SSH keys generated. To do so open terminal and run 
+```bash
+ls -al ~/.ssh
+```
+
+### If you see "ls: .ssh: No such file or directory"
+
+Please run this command to generate the SSH directory and empty key files.
+```bash
+cd ~ && mkdir .ssh && chmod 700 .ssh && cd .ssh && touch id_rsa && touch id_rsa.pub && chmod 600 id_rsa && chmod 644 id_rsa.pub
+```
+
+### Now that we have the required files, let's edit them
+
+We will need to bring in both the public key (.pub) and the private.\
+**Private:** `vim ~/.ssh/id_rsa`\
+**Public:** `vim ~/.ssh/id_rsa.pub`
+
+**Basic Vim Editor Commands**\
+**a** = Edit Mode\
+**ESC** = Exit Edit Mode\
+**:** = Command
+
+For both key files, one at a time - vim the file.  
+1. **IF** File Contents are **NOT** empty, before going into edit mode press lowercase **d** and then uppercase **G**. This will truncate the file.
+2. Press "**a**" to enter edit mode
+3. Paste in your key normally ( **(Command/Control) + v** )
+4. Press the "**ESC**" key
+5. Press "**:**" (_colon_)
+6. Type lowercase "**wq**" (_write & quit_)
 
 ### Understanding SSH Key Pairs
 
