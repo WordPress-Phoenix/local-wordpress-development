@@ -40,13 +40,13 @@ brew cask install iterm2 sequel-pro postman visual-studio-code
 ```
 ### Recommended for Productivity
 ```bash
-brew cask install phpstorm slack lastpass
+brew cask install phpstorm slack
 brew cask install alfred spectacle flux dash imageoptim clipy
-brew cask install filezilla google-chrome spotify snagit
+brew cask install google-chrome spotify snagit
 ```
 ### Recommended for OS X Finder Quick Look Previews
 ```
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv webpquicklook suspicious-package quicklookase qlvideo
 ```
 Originally from https://github.com/sindresorhus/quick-look-plugins
 
