@@ -290,6 +290,16 @@ vagrant plugin install vagrant-triggers
 mkdir -p ~/Sites; cd ~/Sites && git clone https://github.com/Varying-Vagrant-Vagrants/VVV.git ; cd VVV && vagrant up ;
 ```
 
+### Possible issue
+If you run into issue with `default: There are problems and -y was used without --force-yes`, 
+
+You may be able to resolve it by:
+1. `cd ~/Sites/VVV/provision/provision.sh`
+2. Search for `if ! apt-get -y -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew install`
+3. Replace `apt-get -y` with `apt-get --force-yes -y` on that line
+
+For other issue around VVV, please check the issue board: https://github.com/Varying-Vagrant-Vagrants/VVV/issues
+
 ### But I want a custom local WordPress instance
 Enter VVV2 YML configs. Allowing you to tell VVV that you want more local instances, and how you want those instances configured. Read more in the [official VVV2 config docs](https://varyingvagrantvagrants.org/docs/en-US/vvv-config/). Would you like to see a video to follow along? We got you covered there too!
 
