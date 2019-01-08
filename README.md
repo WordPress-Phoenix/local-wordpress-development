@@ -212,7 +212,7 @@ Basically, when you are using SSH or SSH tunnels, you need to "grant access" to 
 ### Configure `dnsmasq`
 This assumes you use the standard VVV with VirtualBox and the default IP.
 Install: dnsmasq was installed above, if you skipped it `brew install dnsmasq`
-Setup (https://echo.co/blog/never-touch-your-local-etchosts-file-os-x-again):
+Setup (https://alanthing.com/blog/2012/04/24/never-touch-your-local-etchosts-file-os-x-again/):
 
 ```bash
 mkdir -pv $(brew --prefix)/etc/
