@@ -337,7 +337,7 @@ User: 		wp
 Pass: 		wp
 Database: 	(empty)
 Port: 		3306
-SSH Host: 	vvv.dev
+SSH Host: 	vvv.test
 SSH User: 	vagrant
 SSH Pass: 	vagrant
 SSH Port: 	(none)
